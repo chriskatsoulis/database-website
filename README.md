@@ -1,13 +1,18 @@
+# Database Website
 
-# Saudi America
+## Intro to Databases
 
-Saudi America, a burgeoning brokerage startup, is dedicated to bridging the gap between Middle Eastern and American markets, catering to the needs of everyday retail investors. With a substantial clientele of approximately 100,000 users, the platform facilitates an impressive $5,000,000,000 USD in trades each month. To efficiently manage and streamline their operations, Saudi America requires a robust database-backed system. This system would play a pivotal role in tracking and organizing a multitude of crucial data points, including but not limited to orders, securities, positions, and investor information. The database will enable seamless transaction tracking, portfolio management, and client engagement, providing the scalability needed to accommodate the dynamic nature of a rapidly growing user base and transaction volume.
+Presenting my final project for my Intro to Databases class: a web-based relational database system developed using JavaScript, HTML/CSS, Express, and MySQL. Designed to facilitate efficient data management, the system offers CRUD functionalities and ensures data integrity through meticulous design and implementation. I iteratively refined the project based on peer reviews, resulting in a polished web application that showcases my skills in both database management and web development.
 
-## Team
+## Final Project
 
-Group 173
-
-Members: Chris Katsoulis, William Demsar
+See [Project Overview](Project_Overview.pdf) to review project specifics, such as...
+-  Summary of iterative changes
+-  Description of the use case scenario
+-  Database outline
+-  ERD
+-  Schema
+-  UI screenshots
 
 ## Citations
 
