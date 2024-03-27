@@ -1,0 +1,68 @@
+{{!-- Citation for the following: Update SCS form --}}
+{{!-- Date: 2/29/2022 --}}
+{{!-- Adapted from: Node.js - Step 5 - Adding New Data --}}
+{{!-- Source URL: https://github.com/osu-cs340-ecampus/nodejs-starter-app/tree/main/Step%205%20-%20Adding%20New%20Data --}}
+
+{{!-- Citation for the following: Update SCS functionality --}}
+{{!-- Date: 3/7/2022 --}}
+{{!-- Adapted from: James Cole (TA) revisions --}}
+{{!-- Source URL: https://edstem.org/us/courses/49750/discussion/4472145?comment=10399711 --}}
+
+<html>
+<head>
+    <title>Security Codes Securities</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    <style>
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    </style>
+    <style>
+        /* Style for the h4 element */
+        h4 {
+            position: fixed;
+            bottom: 0; 
+            width: 100%; 
+            background-color: var(--forestGreen);
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>SAUDI AMERICA</h1>
+
+    <nav>
+        <a href="/">HOME</a> | <a href="/orders">ORDERS</a> | <a href="/securities">SECURITIES</a> | <a href="/security-codes">SECURITY CODES</a> | <a href="/security-codes-securities">SECURITY CODES SECURITIES</a> | <a href="/investors">INVESTORS</a> | <a href="/investor-types">INVESTOR TYPES</a> | <a href="/positions">POSITIONS</a>
+    </nav>
+
+    <h2>Update SCS</h2>
+    <form id="update-scs-form-ajax" method="POST" action="/update-scs">
+        <input type="hidden" name="scsID" id="scsID" value={{scsID}}>
+        <div class="form-container">
+            <label for="input-securityID">Security: </label>
+            <select name="input-securityID" id="input-securityID">
+                <option value="">Select Security</option>
+                {{#each securities}}
+                <option value="{{this.securityID}}">{{this.name}}</option>
+                {{/each}}
+            </select>
+
+            <label for="input-securityCodeID">Security Code: </label>
+            <select name="input-securityCodeID" id="input-securityCodeID">
+                <option value="">Select Security Code</option>
+                {{#each securitycodes}}
+                <option value="{{this.securityCodeID}}">{{this.description}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <input type="submit" value="Update">
+    </form>
+
+    <h4>&copy; 2024 Saudi America</h4>
+</body>
+</html>

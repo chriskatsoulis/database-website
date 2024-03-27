@@ -1,0 +1,79 @@
+{{!-- Citation for the following: Add Investor form --}}
+{{!-- Date: 3/7/2022 --}}
+{{!-- Adapted from: Node.js - Step 5 - Adding New Data --}}
+{{!-- Source URL: https://github.com/osu-cs340-ecampus/nodejs-starter-app/tree/main/Step%205%20-%20Adding%20New%20Data --}}
+
+<html>
+<head>
+<title>Investors</title>
+<link href="/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<h1>SAUDI AMERICA</h1>
+
+<nav>
+    <a href="/">HOME</a> | <a href="/orders">ORDERS</a> | <a href="/securities">SECURITIES</a> | <a href="/security-codes">SECURITY CODES</a> | <a href="/security-codes-securities">SECURITY CODES SECURITIES</a> | <a href="/investors">INVESTORS</a> | <a href="/investor-types">INVESTOR TYPES</a> | <a href="/positions">POSITIONS</a>
+</nav>
+</html>
+
+<h2>Investors</h2>
+
+{{!-- Create a table --}}
+<table border="1" cellpadding="5">
+
+    {{!-- Header section --}}
+    <thead>
+
+        {{!-- For just the first row, we print each key of the row object as a header cell so we
+        know what each column means when the page renders --}}
+        <tr>
+            <th>ID</th>
+            <th>INVESTOR TYPE</th>
+            <th>NAME</th>
+            <th>CASH BALANCE</th>
+            <th>PORTFOLIO BALANCE</th>
+            <th>PORTFOLIO PERFORMANCE</th>
+        </tr>
+    </thead>
+
+    {{!-- Body section --}}
+    <tbody>
+
+        {{#each data}}
+        <tr>
+            <td align="middle">{{this.investorID}}</td>
+            <td align="middle">{{this.description}}</td>
+            <td align="middle">{{this.name}}</td>
+            <td align="right">{{this.cashBalance}}</td>
+            <td align="right">{{this.portfolioBalance}}</td>
+            <td align="right">{{this.portfolioPerformance}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<p>
+
+</p>
+<h3>Add Investor</h3>
+<form id="add-investor-form" method="POST" action="/add-investor-form">
+    <select name="input-description" id="input-description">
+        <option value="">Investor Type</option>
+        {{#each investortypes}}
+        <option value="{{this.investorTypeID}}">{{this.description}}</option>
+        {{/each}}
+    </select>
+    <input type="text" name="input-name" id="input-name" placeholder="Name">
+    <input type="text" name="input-cashBalance" id="input-cashBalance" placeholder="Cash Balance">
+    <input type="text" name="input-portfolioBalance" id="input-portfolioBalance" placeholder="Portfolio Balance">
+    <input type="text" name="input-portfolioPerformance" id="input-portfolioPerformance" placeholder="Portfolio Performance">
+
+    <div style="text-align:center">
+        <input type="Submit"/>
+    </div>
+</form>
+<p></p>
+<p></p>
+<p></p>
+
+<h4>&copy 2024 Saudi America</h4>

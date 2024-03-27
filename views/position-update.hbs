@@ -1,0 +1,65 @@
+{{!-- Citation for the following: Update Position form --}}
+{{!-- Date: 3/18/2022 --}}
+{{!-- Adapted from: Node.js - Step 8 - Dynamically Updating Data --}}
+{{!-- Source URL: https://github.com/osu-cs340-ecampus/nodejs-starter-app/tree/main/Step%208%20-%20Dynamically%20Updating%20Data --}}
+
+<html>
+<head>
+    <title>Positions</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    <style>
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    </style>
+    <style>
+        /* Style for the h4 element */
+        h4 {
+            position: fixed;
+            bottom: 0; 
+            width: 100%; 
+            background-color: var(--forestGreen);
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>SAUDI AMERICA</h1>
+
+    <nav>
+        <a href="/">HOME</a> | <a href="/orders">ORDERS</a> | <a href="/securities">SECURITIES</a> | <a href="/security-codes">SECURITY CODES</a> | <a href="/security-codes-securities">SECURITY CODES SECURITIES</a> | <a href="/investors">INVESTORS</a> | <a href="/investor-types">INVESTOR TYPES</a> | <a href="/positions">POSITIONS</a>
+    </nav>
+
+    <h2>Update Position</h2>
+    <form id="update-position-form-ajax" method="POST" action="/update-position">
+        <input type="hidden" name="positionID" id="positionID" value={{positionID}}>
+        <div class="form-container">
+            <label for="input-position">Position ID, Investor Name, Security: </label>
+            <select name="input-position" id="input-position">
+                <option value="">Select Position</option>
+                {{#each data}}
+                <option value="{{this.positionID}}">{{this.positionID}} - {{this.investorname}} - {{this.securityname}}</option>
+                {{/each}}
+            </select>
+        <label for="input-units">Units: </label>
+        <input type="text" name="input-units" id="input-units" placeholder="Units">
+        <label for="input-initialValue">Initial Value: </label>
+        <input type="text" name="input-initialValue" id="input-initialValue" placeholder="Initial Value">
+        <label for="input-currentValue">Current Value: </label>
+        <input type="text" name="input-currentValue" id="input-currentValue" placeholder="Current Value">
+        <label for="input-gainLoss">Gain/Loss: </label>
+        <input type="text" name="input-gainLoss" id="input-gainLoss" placeholder="Gain/Loss">
+        <input type="submit" value="Update">
+        <br>
+        <br>
+        <br>
+    </form>
+
+    <h4>&copy; 2024 Saudi America</h4>
+</body>
+</html>

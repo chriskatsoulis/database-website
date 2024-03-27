@@ -1,0 +1,62 @@
+{{!-- Citation for the following: Add Security Code form --}}
+{{!-- Date: 3/7/2022 --}}
+{{!-- Adapted from: Node.js - Step 5 - Adding New Data --}}
+{{!-- Source URL: https://github.com/osu-cs340-ecampus/nodejs-starter-app/tree/main/Step%205%20-%20Adding%20New%20Data --}}
+
+<html>
+<head>
+<title>Security Codes</title>
+<link href="/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<h1>SAUDI AMERICA</h1>
+
+<nav>
+    <a href="/">HOME</a> | <a href="/orders">ORDERS</a> | <a href="/securities">SECURITIES</a> | <a href="/security-codes">SECURITY CODES</a> | <a href="/security-codes-securities">SECURITY CODES SECURITIES</a> | <a href="/investors">INVESTORS</a> | <a href="/investor-types">INVESTOR TYPES</a> | <a href="/positions">POSITIONS</a>
+</nav>
+</html>
+
+<h2>Security Codes</h2>
+
+{{!-- Create a table --}}
+<table border="1" cellpadding="5">
+
+    {{!-- Header section --}}
+    <thead>
+
+        {{!-- For just the first row, we print each key of the row object as a header cell so we
+        know what each column means when the page renders --}}
+        <tr>
+            <th>ID</th>
+            <th>DESCRIPTION</th>
+        </tr>
+    </thead>
+
+    {{!-- Body section --}}
+    <tbody>
+
+        {{#each data}}
+        <tr>
+            <td align="middle">{{this.securityCodeID}}</td>
+            <td align="middle">{{this.description}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<p>
+
+</p>
+<h3>Add Security Code</h3>
+<form id="add-security-code-form" method="POST" action="/add-security-code-form">
+    <input type="text" name="input-description" id="input-description" placeholder="Enter Description">
+
+    <div style="text-align:center">
+        <input type="Submit"/>
+    </div>
+</form>
+<p></p>
+<p></p>
+<p></p>
+
+<h4>&copy 2024 Saudi America</h4>

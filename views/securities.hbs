@@ -1,0 +1,68 @@
+{{!-- Citation for the following: Add Security form --}}
+{{!-- Date: 3/7/2022 --}}
+{{!-- Adapted from: Node.js - Step 5 - Adding New Data --}}
+{{!-- Source URL: https://github.com/osu-cs340-ecampus/nodejs-starter-app/tree/main/Step%205%20-%20Adding%20New%20Data --}}
+
+<html>
+<head>
+<title>Securities</title>
+<link href="/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<h1>SAUDI AMERICA</h1>
+
+<nav>
+    <a href="/">HOME</a> | <a href="/orders">ORDERS</a> | <a href="/securities">SECURITIES</a> | <a href="/security-codes">SECURITY CODES</a> | <a href="/security-codes-securities">SECURITY CODES SECURITIES</a> | <a href="/investors">INVESTORS</a> | <a href="/investor-types">INVESTOR TYPES</a> | <a href="/positions">POSITIONS</a>
+</nav>
+</html>
+
+<h2>Securities</h2>
+
+{{!-- Create a table --}}
+<table border="1" cellpadding="5">
+
+    {{!-- Header section --}}
+    <thead>
+
+        {{!-- For just the first row, we print each key of the row object as a header cell so we
+        know what each column means when the page renders --}}
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>TICKER</th>
+            <th>CURRENT PRICE</th>
+        </tr>
+    </thead>
+
+    {{!-- Body section --}}
+    <tbody>
+
+        {{#each data}}
+        <tr>
+            <td align="middle">{{this.securityID}}</td>
+            <td align="middle">{{this.name}}</td>
+            <td align="middle">{{this.ticker}}</td>
+            <td align="right">{{this.currentPrice}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<p>
+
+</p>
+<h3>Add Security</h3>
+<form id="add-security-form" method="POST" action="/add-security-form">
+    <input type="text" name="input-name" id="input-name" placeholder="Name">
+    <input type="text" name="input-ticker" id="input-ticker" placeholder="Ticker">
+    <input type="text" name="input-currentPrice" id="input-currentPrice" placeholder="Current Price">
+
+    <div style="text-align:center">
+        <input type="Submit"/>
+    </div>
+</form>
+<p></p>
+<p></p>
+<p></p>
+
+<h4>&copy 2024 Saudi America</h4>
