@@ -2,7 +2,7 @@
 
 ## Intro to Databases
 
-Presenting my final project for my Intro to Databases class: a web-based relational database system developed using JavaScript, HTML/CSS, Express, and MySQL. Designed to facilitate efficient data management, the system offers CRUD functionalities and ensures data integrity through meticulous design and implementation. I iteratively refined the project based on peer reviews, resulting in a polished web application that showcases my skills in both database management and web development.
+Presenting my final project for my Intro to Databases class: a web-based relational database application developed using JavaScript, HTML/CSS, Express, and MySQL. Designed to facilitate efficient data management, the system offers CRUD functionalities and ensures data integrity through meticulous design and implementation. I iteratively refined the project based on peer reviews, resulting in a polished web application that showcases my skills in both database management and web development.
 
 ## Final Project
 
